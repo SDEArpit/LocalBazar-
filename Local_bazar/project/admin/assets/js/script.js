@@ -240,3 +240,27 @@ function purchase(){
     });
     
 }
+$("#srch").on("keyup",function(){
+     let srch=this.value;
+    $.ajax({
+        url:'backend/stock_report_process.php',
+        method:'POST',
+        data:{srch:srch},
+        success:function(res){
+           $("#res").html(`${res}`);
+
+        }
+    })
+})
+$("#srch1").on("keyup",function(){
+     let srch=this.value;
+    $.ajax({
+        url:'backend/purchase_report_process.php',
+        method:'POST',
+        data:{srch:srch},
+        success:function(res){
+           $("#res1").html(`${res}`);
+
+        }
+    })
+})
